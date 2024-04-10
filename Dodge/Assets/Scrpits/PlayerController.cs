@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlyaerController : MonoBehaviour
+public class PlayerController : MonoBehaviour
 {
     private Rigidbody playerRigidbody;
     public float speed = 8f; //이동 속력
@@ -50,5 +50,8 @@ public class PlyaerController : MonoBehaviour
     public void Die()
     {
         gameObject.SetActive(false);
+
+        GameManager gameManager = FindObjectOfType<GameManager>();
+        gameManager.EndGame();
     }
 }
